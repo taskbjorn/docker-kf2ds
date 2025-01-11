@@ -1,0 +1,14 @@
+{
+    "KF1 West London":
+    {
+        "Workshop ID": "733191110",
+        "WebAdmin Name": "KF1-West_London",
+        "Map Name": "KF-KF1_West_London",
+        "New Custom Map": "Yes",
+        "Playable in Survival": "Yes",
+        "Playable in Weekly": "Yes",
+        "Playable in Versus Survival": "Yes",
+        "Playable in Endless": "No",
+        "Playable in Objective": "No"
+    }
+}

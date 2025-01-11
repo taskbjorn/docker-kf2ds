@@ -1,0 +1,16 @@
+silent --quiet
+
+start_jc -- Welcome %BCK to Killing Floor 2 Server, %PLR!\nTotal kills: %KLL (%KRK)\nTotal Dosh: %DSH (%DRK)\nTotal play time: %TME (%TRK)
+
+start_trc -w 1 -- top_wave_dosh -p
+start_trc -w 2 -- top_wave_dosh -p
+start_trc -w 3 -- top_wave_dosh -p
+start_trc -w 4 -- top_wave_dosh -p
+start_trc -w 5 -- top_wave_dosh -p
+start_trc -w 6 -- top_wave_dosh -p
+start_trc -w 7 -- top_wave_dosh -p
+start_trc -w 8 -- top_wave_dosh -p
+start_trc -w 9 -- top_wave_dosh -p
+start_trc -w 10 -- top_wave_dosh -p
+
+silent --quiet

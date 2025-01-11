@@ -1,0 +1,45 @@
+version: "3.7"
+
+networks:
+  backend:
+    name: kf2ds
+  proxy:
+    external: true
+
+services:
+  server:
+    container_name: kf2ds_server
+    env_file:
+      - env/kf2ds-server.env
+    image: taskbjorn/kf2ds-dockerised:latest
+    networks:
+      - backend
+      - proxy
+    ports:
+      - "7777:7777/udp"
+      - "27015:27015/udp"
+    restart: unless-stopped
+    volumes:
+      - webserver:/home/kf2/.kf2ds/server/KFGame/Web/ServerAdmin/:ro
+      - overrides:/home/kf2/.kf2ds/overrides/kf2/KFGame/Cache/:ro
+
+  magicked:
+    container_name: kf2ds_magicked
+    env_file:
+      - env/kf2ds-magicked.env
+    image: th3z/kf2-magicked-admin:latest
+    networks:
+      - backend
+    restart: unless-stopped
+    volumes:
+      - ./magicked/magicked_admin.conf:/magicked_admin/conf/magicked_admin.conf:ro
+      - ./magicked/scripts/:/magicked_admin/conf/scripts:ro
+      - webserver:/mnt/kf2ds-server/KFGame/Web/ServerAdmin/
+
+volumes:
+  magicked:
+    name: kf2ds_magicked
+  overrides:
+    name: kf2ds_overrides
+  webserver:
+    name: kf2ds_webserver

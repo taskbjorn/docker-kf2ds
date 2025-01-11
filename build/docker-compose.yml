@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  kf2ds-dockerised_latest:
+    &default-kf2ds-dockerised
+    build:
+      context: stable
+    image: taskbjorn/kf2ds-dockerised:latest
+
+  kf2ds-dockerised_stable:
+    << : *default-kf2ds-dockerised
+    image: taskbjorn/kf2ds-dockerised:stable
